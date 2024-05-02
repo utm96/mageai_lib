@@ -1,0 +1,26 @@
+JarqueBera.test         Jarque-Bera Test for Normality
+_PACKAGE                Automatic Detection of Outliers in Time Series
+bde9915                 Data Set: Working Paper 'bde9915'
+calendar.effects        Calendar Effects
+coefs2poly              Product of the Polynomials in an ARIMA Model
+discard.outliers        Stage II of the Procedure: Discard Outliers
+find.consecutive.outliers
+                        Find outliers at consecutive time points
+hicp                    Data Set: Harmonised Indices of Consumer Prices
+ipi                     Data Set: Industrial Production Indices
+locate.outliers         Stage I of the Procedure: Locate Outliers
+                        (Baseline Function)
+locate.outliers.oloop   Stage I of the Procedure: Locate Outliers (Loop
+                        Around Functions)
+outliers                Define Outliers in a Data Frame
+outliers.effects        Create the Pattern of Different Types of
+                        Outliers
+outliers.regressors     Regressor Variables for the Detection of
+                        Outliers
+outliers.tstatistics    Test Statistics for the Significance of
+                        Outliers
+plot.tsoutliers         Display Outlier Effects Detected by
+                        'tsoutliers'
+print.tsoutliers        Print 'tsoutliers' object
+remove.outliers         Stage II of the Procedure: Discard Outliers
+tso                     Automatic Procedure for Detection of Outliers

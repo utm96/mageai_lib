@@ -1,0 +1,108 @@
+adam_params             Tuning Parameters for ADAM Models
+adam_reg                General Interface for ADAM Regression Models
+add_modeltime_model     Add a Model into a Modeltime Table
+arima_boost             General Interface for "Boosted" ARIMA
+                        Regression Models
+arima_params            Tuning Parameters for ARIMA Models
+arima_reg               General Interface for ARIMA Regression Models
+combine_modeltime_tables
+                        Combine multiple Modeltime Tables into a single
+                        Modeltime Table
+control_modeltime       Control aspects of the training process
+create_model_grid       Helper to make 'parsnip' model specs from a
+                        'dials' parameter grid
+create_xreg_recipe      Developer Tools for preparing XREGS
+                        (Regressors)
+drop_modeltime_model    Drop a Model from a Modeltime Table
+exp_smoothing           General Interface for Exponential Smoothing
+                        State Space Models
+exp_smoothing_params    Tuning Parameters for Exponential Smoothing
+                        Models
+get_arima_description   Get model descriptions for Arima objects
+get_model_description   Get model descriptions for parsnip, workflows &
+                        modeltime objects
+get_tbats_description   Get model descriptions for TBATS objects
+log_extractors          Log Extractor Functions for Modeltime Nested
+                        Tables
+m750                    The 750th Monthly Time Series used in the M4
+                        Competition
+m750_models             Three (3) Models trained on the M750 Data
+                        (Training Set)
+m750_splits             The results of train/test splitting the M750
+                        Data
+m750_training_resamples
+                        The Time Series Cross Validation Resamples the
+                        M750 Data (Training Set)
+maape                   Mean Arctangent Absolute Percentage Error
+maape_vec               Mean Arctangent Absolute Percentage Error
+metric_sets             Forecast Accuracy Metrics Sets
+modeltime_accuracy      Calculate Accuracy Metrics
+modeltime_calibrate     Preparation for forecasting
+modeltime_fit_workflowset
+                        Fit a 'workflowset' object to one or multiple
+                        time series
+modeltime_forecast      Forecast future data
+modeltime_nested_fit    Fit Tidymodels Workflows to Nested Time Series
+modeltime_nested_forecast
+                        Modeltime Nested Forecast
+modeltime_nested_refit
+                        Refits a Nested Modeltime Table
+modeltime_nested_select_best
+                        Select the Best Models from Nested Modeltime
+                        Table
+modeltime_refit         Refit one or more trained models to new data
+modeltime_residuals     Extract Residuals Information
+modeltime_residuals_test
+                        Apply Statistical Tests to Residuals
+modeltime_table         Scale forecast analysis with a Modeltime Table
+naive_reg               General Interface for NAIVE Forecast Models
+new_modeltime_bridge    Constructor for creating modeltime models
+nnetar_params           Tuning Parameters for NNETAR Models
+nnetar_reg              General Interface for NNETAR Regression Models
+panel_tail              Filter the last N rows (Tail) for multiple time
+                        series
+parallel_start          Start parallel clusters using 'parallel'
+                        package
+parse_index             Developer Tools for parsing date and date-time
+                        information
+plot_modeltime_forecast
+                        Interactive Forecast Visualization
+plot_modeltime_residuals
+                        Interactive Residuals Visualization
+pluck_modeltime_model   Extract model by model id in a Modeltime Table
+prep_nested             Prepared Nested Modeltime Data
+prophet_boost           General Interface for Boosted PROPHET Time
+                        Series Models
+prophet_params          Tuning Parameters for Prophet Models
+prophet_reg             General Interface for PROPHET Time Series
+                        Models
+pull_modeltime_residuals
+                        Extracts modeltime residuals data from a
+                        Modeltime Model
+pull_parsnip_preprocessor
+                        Pulls the Formula from a Fitted Parsnip Model
+                        Object
+recipe_helpers          Developer Tools for processing XREGS
+                        (Regressors)
+recursive               Create a Recursive Time Series Model from a
+                        Parsnip or Workflow Regression Model
+seasonal_reg            General Interface for Multiple Seasonality
+                        Regression Models (TBATS, STLM)
+summarize_accuracy_metrics
+                        Summarize Accuracy Metrics
+table_modeltime_accuracy
+                        Interactive Accuracy Tables
+temporal_hierarchy      General Interface for Temporal Hierarchical
+                        Forecasting (THIEF) Models
+temporal_hierarchy_params
+                        Tuning Parameters for TEMPORAL HIERARCHICAL
+                        Models
+time_series_params      Tuning Parameters for Time Series (ts-class)
+                        Models
+update_model_description
+                        Update the model description by model id in a
+                        Modeltime Table
+update_modeltime_model
+                        Update the model by model id in a Modeltime
+                        Table
+window_reg              General Interface for Window Forecast Models

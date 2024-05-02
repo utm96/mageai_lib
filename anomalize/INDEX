@@ -1,0 +1,24 @@
+anomalize               Detect anomalies using the tidyverse
+anomalize_methods       Methods that power anomalize()
+anomalize_package       anomalize: Tidy anomaly detection
+clean_anomalies         Clean anomalies from anomalized data
+decompose_methods       Methods that power time_decompose()
+plot_anomalies          Visualize the anomalies in one or multiple time
+                        series
+plot_anomaly_decomposition
+                        Visualize the time series decomposition with
+                        anomalies shown
+prep_tbl_time           Automatically create tibbletime objects from
+                        tibbles
+set_time_scale_template
+                        Get and modify time scale template
+tidyverse_cran_downloads
+                        Downloads of various "tidyverse" packages from
+                        CRAN
+time_apply              Apply a function to a time series by period
+time_decompose          Decompose a time series in preparation for
+                        anomaly detection
+time_frequency          Generate a time series frequency from a
+                        periodicity
+time_recompose          Recompose bands separating anomalies from
+                        "normal" observations

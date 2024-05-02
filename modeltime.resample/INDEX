@@ -1,0 +1,16 @@
+get_target_text_from_resamples
+                        Gets the target variable as text from unnested
+                        resamples
+m750_training_resamples_fitted
+                        Time Series Cross Validation Resample
+                        Predictions (Results) from the M750 Data
+                        (Training Set)
+modeltime_fit_resamples
+                        Fits Models in a Modeltime Table to Resamples
+modeltime_resample_accuracy
+                        Calculate Accuracy Metrics from Modeltime
+                        Resamples
+plot_modeltime_resamples
+                        Interactive Resampling Accuracy Plots
+unnest_modeltime_resamples
+                        Unnests the Results of Modeltime Fit Resamples

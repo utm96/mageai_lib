@@ -1,0 +1,16 @@
+%>%	pipe
+.data	tidyeval
+:=	tidyeval
+as_label	tidyeval
+as_name	tidyeval
+enquo	tidyeval
+enquos	tidyeval
+ensemble_average	ensemble_average
+ensemble_model_spec	ensemble_model_spec
+ensemble_nested_average	ensemble_nested_average
+ensemble_nested_weighted	ensemble_nested_weighted
+ensemble_weighted	ensemble_weighted
+expr	tidyeval
+sym	tidyeval
+syms	tidyeval
+tidyeval	tidyeval

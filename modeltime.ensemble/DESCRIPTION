@@ -1,0 +1,46 @@
+Package: modeltime.ensemble
+Type: Package
+Title: Ensemble Algorithms for Time Series Forecasting with Modeltime
+Version: 1.0.3.9000
+Authors@R: c(
+    person("Matt", "Dancho", email = "mdancho@business-science.io", role = c("aut", "cre")),
+    person("Business Science", role = "cph")
+    )
+Description: 
+    A 'modeltime' extension that implements time series ensemble forecasting methods including model averaging, 
+    weighted averaging, and stacking. These techniques are popular methods 
+    to improve forecast accuracy and stability. Refer to papers such as 
+    "Machine-Learning Models for Sales Time Series Forecasting" Pavlyshenko, B.M. (2019) <doi:10.3390>.
+URL: https://business-science.github.io/modeltime.ensemble/,
+        https://github.com/business-science/modeltime.ensemble
+BugReports: https://github.com/business-science/modeltime.ensemble/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: modeltime (>= 1.2.3), modeltime.resample (>= 0.2.1), R (>=
+        3.5)
+Imports: tune (>= 0.1.2), rsample, yardstick, workflows (>= 0.2.1),
+        parsnip (>= 0.1.6), recipes (>= 0.1.15), timetk (>= 2.5.0),
+        tibble, dplyr (>= 1.0.0), tidyr, purrr, stringr, rlang (>=
+        0.1.2), cli, generics, magrittr, tictoc, parallel, doParallel,
+        foreach,
+Suggests: gt, dials, glmnet, utils, earth, testthat, tidymodels,
+        xgboost, lubridate, knitr, rmarkdown
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: modeltime.ensemble
+RemoteUsername: business-science
+RemoteRef: HEAD
+RemoteSha: ca0e64747411b626b318a91fadadc1edd9a1ba07
+GithubRepo: modeltime.ensemble
+GithubUsername: business-science
+GithubRef: HEAD
+GithubSHA1: ca0e64747411b626b318a91fadadc1edd9a1ba07
+NeedsCompilation: no
+Packaged: 2024-05-02 13:30:43 UTC; triminh_uong
+Author: Matt Dancho [aut, cre],
+  Business Science [cph]
+Maintainer: Matt Dancho <mdancho@business-science.io>
+Built: R 4.2.2; ; 2024-05-02 13:30:44 UTC; unix

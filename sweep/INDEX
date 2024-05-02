@@ -1,0 +1,39 @@
+add_index               Adds a sequential index column to a data frame
+arima_string            Print the ARIMA model parameters
+bats_string             Print the BATS model parameters
+bike_sales              Fictional sales data for bike shops purchasing
+                        Cannondale bikes
+sw_augment              Augment data according to a tidied model
+sw_augment.default      Default augment method
+sw_augment_columns      Augments data
+sw_glance               Construct a single row summary "glance" of a
+                        model, fit, or other object
+sw_glance.default       Default glance method
+sw_sweep                Tidy forecast objects
+sw_tidy                 Tidy the result of a time-series model into a
+                        summary tibble
+sw_tidy.default         Default tidying method
+sw_tidy_decomp          Coerces decomposed time-series objects to
+                        tibble format.
+sweep_package           sweep: Extending broom to time series
+                        forecasting
+tbats_string            Print the TBATS model parameters
+tidiers_HoltWinters     Tidying methods for HoltWinters modeling of
+                        time series
+tidiers_StructTS        Tidying methods for StructTS (Error, Trend,
+                        Seasonal) / exponential smoothing modeling of
+                        time series
+tidiers_arima           Tidying methods for ARIMA modeling of time
+                        series
+tidiers_bats            Tidying methods for BATS and TBATS modeling of
+                        time series
+tidiers_decomposed_ts   Tidying methods for decomposed time series
+tidiers_ets             Tidying methods for ETS (Error, Trend,
+                        Seasonal) exponential smoothing modeling of
+                        time series
+tidiers_nnetar          Tidying methods for Nural Network Time Series
+                        models
+tidiers_stl             Tidying methods for STL (Seasonal, Trend,
+                        Level) decomposition of time series
+validate_index          Validates data frame has column named the same
+                        name as variable rename_index
