@@ -1,0 +1,6 @@
+%dofuture%              Loop over a Foreach Expression using Futures
+doFuture                doFuture: Foreach Parallel Adapter using
+                        Futures
+registerDoFuture        Use the Foreach %dopar% Adapter with Futures
+withDoRNG               Evaluates a foreach %dopar% expression with the
+                        doRNG adapter

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Foreach Iteration using Futures via %dofuture%</title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+<meta name="keywords" content="R, package, vignette, foreach, future, promise, lazy evaluation, synchronous, asynchronous, parallel, cluster">
+<meta name="author" content="Henrik Bengtsson">
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1>Foreach Iteration using Futures via %dofuture%</h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<h1 id="foreach-iteration-using-futures-via-dofuture">Foreach Iteration using Futures via %dofuture%</h1>
+<p>In addition to providing a <strong><a href="https://cran.r-project.org/package=foreach">foreach</a></strong> adapter to be used with the
+<code>%dopar%</code> operator of <strong>foreach</strong>, the <strong><a href="https://cran.r-project.org/package=doFuture">doFuture</a></strong> package provides
+an alternative <code>foreach()</code> operator called <code>%dofuture%</code> that ties more
+directly into the <strong><a href="https://cran.r-project.org/package=future">future</a></strong> framework.  For example,</p>
+<pre><code class="language-r">library(doFuture)
+plan(multisession)
+
+cutoff &lt;- 0.10
+y &lt;- foreach(x = mtcars, .export = c(&quot;cutoff&quot;)) %dofuture% {
+  mean(x, trim = cutoff)
+}
+names(y) &lt;- colnames(mtcars)
+</code></pre>
+<p>There are several advantages of using <code>%dofuture%</code> instead of
+<code>%dopar%</code>.  When you use <code>%dofuture%</code>,</p>
+<ul>
+<li>
+<p>there is no need to use <code>registerDoFuture()</code></p>
+</li>
+<li>
+<p>there is no need to use <code>%dorng%</code> of the <strong>doRNG</strong> package
+(but you need to specify <code>.options.future = list(seed = TRUE)</code>
+whenever using random numbers in the <code>expr</code> expression)</p>
+</li>
+<li>
+<p>global variables and packages are identified automatically by
+the <strong>future</strong> framework</p>
+</li>
+<li>
+<p>errors are relayed as-is (with <code>%dopar%</code> they captured and modified)</p>
+</li>
+</ul>
+<p>This makes <code>foreach(...) %dofuture% { ... }</code> more in line with how
+sibling packages <strong>future.apply</strong> and <strong>furrr</strong> work.</p>
+<h2 id="global-variables-and-packages">Global variables and packages</h2>
+<p>When using <code>%dofuture%</code>, the future framework identifies globals and
+packages automatically (via static code inspection).</p>
+<p>However, there are cases where it fails to find some of the globals or
+packages. When this happens, one can specify the <code>future()</code> arguments
+<code>globals</code> and <code>packages</code> via foreach argument <code>.options.future</code>.  For
+example, if you specify argument <code>.options.future = list(globals = structure(TRUE, ignore = &quot;b&quot;, add = &quot;a&quot;))</code> then globals are
+automatically identified (<code>TRUE</code>), but it ignores <code>b</code> and always adds
+<code>a</code>.</p>
+<p>An alternative to specifying the <code>globals</code> and the <code>packages</code> options
+via <code>.options.future</code>, is to use the <code>%globals%</code> and <code>%packages%</code>
+operators.</p>
+<p>For further details and instructions, see <code>help(&quot;future&quot;, package = &quot;future&quot;)</code>.</p>
+<h2 id="random-number-generation-rng">Random Number Generation (RNG)</h2>
+<p>The <code>%dofuture%</code> uses the future ecosystem to generate proper random
+numbers in parallel in the same way they are generated in, for
+instance, <strong>future.apply</strong> and <strong>furrr</strong>. For this to work, you need
+to specify <code>.options.future = list(seed = TRUE)</code>.  For example,</p>
+<pre><code class="language-r">y &lt;- foreach(i = 1:3, .options.future = list(seed = TRUE)) %dofuture% {
+  rnorm(1)
+}
+</code></pre>
+<p>An alternative to specifying the <code>seed</code> option via <code>.options.future</code>,
+is to use the <code>%seed%</code> operator.</p>
+<pre><code class="language-r">y &lt;- foreach(i = 1:3) %dofuture% {
+  rnorm(1)
+} %seed% TRUE
+</code></pre>
+<p>For further details and instructions, see <code>help(&quot;future&quot;, package = &quot;future&quot;)</code>.</p>
+<h2 id="load-balancing-chunking">Load balancing (“chunking”)</h2>
+<p>Whether load balancing (“chunking”) should take place or not can be
+controlled by specifying either argument <code>.options.future = list(scheduling = &lt;ratio&gt;)</code> or <code>.options.future = list(chunk.size = &lt;count&gt;)</code> to <code>foreach()</code>.  For example,</p>
+<pre><code class="language-r">y &lt;- foreach(x = 1:10, .options.future = list(scheduling = 2.0)) %dofuture% {
+  slow_fcn(x)
+}
+</code></pre>
+<p>For further details and instructions, see <code>help(&quot;future_lapply&quot;, package = &quot;future.apply&quot;)</code>.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+doFuture-package	doFuture
+%dofuture%	grapes-dofuture-grapes
+doFuture	doFuture
+doFuture.options	doFuture.options
+makeChunks	makeChunks
+registerDoFuture	registerDoFuture
+withDoRNG	withDoRNG
